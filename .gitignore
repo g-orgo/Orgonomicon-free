@@ -1,0 +1,4 @@
+.orgonomicon/
+.venv/
+__pycache__/
+*.log

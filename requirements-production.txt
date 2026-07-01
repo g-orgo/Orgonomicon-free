@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+requests
+rich
+prompt_toolkit
+pyfiglet
+httpx
+pydantic
+reportlab
+pypdf
+python-docx
+pillow

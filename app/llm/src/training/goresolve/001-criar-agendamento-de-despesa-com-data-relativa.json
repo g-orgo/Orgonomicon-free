@@ -1,0 +1,11 @@
+{
+  "title": "Criar agendamento de despesa com data relativa",
+  "user_request": "Agenda o pagamento do aluguel para amanha",
+  "targets": ["shared"],
+  "expected": "Coletar title, description e date; aceitar data relativa e confirmar somente com JSON final valido.",
+  "steps": [
+    "Identificar a despesa",
+    "Resolver a data relativa",
+    "Pedir apenas o campo faltante quando necessario"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "from": "llm/llm_mastermind",
+  "to": "llm/training/migrated/llm_mastermind",
+  "backup": "E:\\Orgonomicon\\.orgonomicon_data\\backups\\training-migration-1782280865",
+  "status": "migrated_and_deprecated"
+}

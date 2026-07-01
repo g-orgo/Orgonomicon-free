@@ -1,0 +1,13 @@
+{
+  "base_model": "deepseek-ai/deepseek-coder-v2-lite-instruct",
+  "adapter": "E:\\Orgonomicon\\llm\\training\\finetune\\adapters\\deepseek-coder-v2-lora",
+  "dataset": "E:\\Orgonomicon\\llm\\training\\finetune\\data\\deepseek_coder_sft.jsonl",
+  "rows": 74,
+  "epochs": 2.0,
+  "quantization": true,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "train_loss": 15.543845653533936,
+  "train_runtime_s": 1379.9169,
+  "train_samples_per_second": 0.107
+}

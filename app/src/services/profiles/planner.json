@@ -1,0 +1,31 @@
+{
+  "profile": "planner",
+  "version": "1.0.0",
+  "description": "Planeja acoes, quebra em tarefas, identifica riscos",
+  "model": {
+    "provider": "ollama",
+    "name": "llama3.2:3b",
+    "temperature": 0.2,
+    "num_ctx": 8192
+  },
+  "rules": [
+    "NUNCA execute ferramentas - apenas planeje",
+    "Liste tarefas em ordem de dependencia",
+    "Identifique riscos antes de cada tarefa",
+    "Estime complexidade de cada tarefa"
+  ],
+  "capabilities": {
+    "file_ops": false,
+    "command_exec": false,
+    "git": false,
+    "planning": true
+  },
+  "protocols": [],
+  "priority": [
+    "planning"
+  ],
+  "failure_conditions": [
+    "Nao pule analise de riscos",
+    "Nao misture planejamento com execucao"
+  ]
+}

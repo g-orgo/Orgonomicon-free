@@ -1,0 +1,25 @@
+{
+  "schema": "orgonomicon.training.evals.v2",
+  "evals": [
+    {
+      "id": "shared_modes_same_source",
+      "assert": "claude-like e outsider usam llm/training"
+    },
+    {
+      "id": "profile_routing",
+      "assert": "request identifica perfil por gatilhos"
+    },
+    {
+      "id": "context_continuity",
+      "assert": "usa contexto da pasta/projeto"
+    },
+    {
+      "id": "plan_mode_quality",
+      "assert": "plan mode gera brainstorm, passos, riscos e critérios"
+    },
+    {
+      "id": "no_false_positive",
+      "assert": "não afirma execução sem validar"
+    }
+  ]
+}

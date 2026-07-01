@@ -1,0 +1,16 @@
+{
+  "title": "Debugger",
+  "priority": 90,
+  "triggers": [
+    "erro",
+    "traceback",
+    "bug",
+    "falha",
+    "debug",
+    "log",
+    "teste falhando",
+    "exception",
+    "stack"
+  ],
+  "contract": "Isola sintoma, evidência, causa provável, correção mínima e teste de regressão."
+}

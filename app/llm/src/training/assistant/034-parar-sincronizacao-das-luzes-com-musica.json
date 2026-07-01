@@ -1,0 +1,20 @@
+{
+  "title": "Parar sincronizacao das luzes com musica",
+  "user_request": "Parar sincronizacao das luzes com musica",
+  "targets": ["windows-executor"],
+  "shared_variables": [
+    "audio_media",
+    "light_entity_singular",
+    "light_entity_plural"
+  ],
+  "variable_patterns": [
+    "encerrar a sincronizacao das {light_entity_plural}",
+    "parar de acompanhar {audio_media}",
+    "desativa {light_entity_singular} sincronizada",
+    "desativa {light_entity_plural} sincronizadas"
+  ],
+  "expected": {
+    "intent": "sync_lights_to_audio",
+    "action": "stop"
+  }
+}

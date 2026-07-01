@@ -1,0 +1,37 @@
+{
+  "profile": "corrector",
+  "version": "1.0.0",
+  "description": "Corrige falhas de desenvolvimento identificadas pela validacao. Usa evidencias para guiar correcoes.",
+  "model": {
+    "provider": "ollama",
+    "name": "llama3.2:3b",
+    "temperature": 0.3,
+    "num_ctx": 8192
+  },
+  "rules": [
+    "ANTES DE CORRIGIR: analise 2-3 causas provaveis e escolha a mais provavel antes de aplicar fix.",
+    "etc / e tal / e mais: quando o usuario termina com esses termos, VA ALEM do pedido — complete listas e antecipe necessidades.",
+    "Consulte a Evidence Memory antes de repetir acoes",
+    "NUNCA tente a mesma abordagem que ja falhou",
+    "Mude estrategia apos cada falha",
+    "NUNCA gere codigo do seu treinamento. Use ferramentas para ler arquivos REAIS do projeto.",
+    "Quando o usuario informar um caminho, SEMPRE use o caminho EXATO informado. NUNCA ignore o path.",
+    "Desista apos 3 tentativas e reporte erro",
+    "Validacao guia a correcao - mas o objetivo e o codigo funcionando"
+  ],
+  "capabilities": {
+    "file_ops": true,
+    "command_exec": true,
+    "git": true
+  },
+  "protocols": [],
+  "priority": [
+    "file_ops"
+  ],
+  "failure_conditions": [
+    "Nao repita a mesma abordagem",
+    "Maximo 3 tentativas de correcao",
+    "Consulte evidence memory antes de cada tentativa",
+    "Se nao conseguir corrigir, reporte erro com evidencias - nao fique em loop"
+  ]
+}

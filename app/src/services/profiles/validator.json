@@ -1,0 +1,34 @@
+{
+  "profile": "validator",
+  "version": "1.0.0",
+  "description": "Valida resultados de desenvolvimento: compilacao, testes, lint, existencia, conteudo. Ferramenta de suporte, nao o produto final.",
+  "model": {
+    "provider": "ollama",
+    "name": "llama3.2:3b",
+    "temperature": 0.1,
+    "num_ctx": 8192
+  },
+  "rules": [
+    "Validacao e ferramenta de suporte ao desenvolvimento - nao o objetivo final",
+    "Execute testes e lints apos cada mudanca para gerar evidencias",
+    "Verifique existencia de arquivos apos write_file/create_dir",
+    "NUNCA aceite saida vazia como evidencia de sucesso",
+    "Resultado validado > codigo gerado"
+  ],
+  "capabilities": {
+    "file_ops": true,
+    "command_exec": true,
+    "git": true
+  },
+  "protocols": [
+    "validate"
+  ],
+  "priority": [
+    "file_ops"
+  ],
+  "failure_conditions": [
+    "Nao pule verificacao de existencia",
+    "Nao aceite saida vazia como evidencia",
+    "Validacao nao deve bloquear desenvolvimento - deve guia-lo"
+  ]
+}

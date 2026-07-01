@@ -1,0 +1,41 @@
+{
+  "schema": "orgonomicon.training.manifest.v2",
+  "version": "beta9-training-restructure",
+  "single_source_of_truth": "llm/training",
+  "deprecated_paths": [
+    "llm/llm_mastermind"
+  ],
+  "consumers": [
+    "claude-like",
+    "outsider",
+    "profile-router",
+    "finetune-lora"
+  ],
+  "example_count": 157,
+  "profiles": [
+    "developer",
+    "debugger",
+    "web_designer",
+    "booksmith",
+    "assistant",
+    "claude_like"
+  ],
+  "datasets": [
+    "assistant.jsonl",
+    "beta_reasoning_hardening.jsonl",
+    "booksmith.jsonl",
+    "claude_like.jsonl",
+    "code_architecture.jsonl",
+    "debugger.jsonl",
+    "developer.jsonl",
+    "process_reasoning_quality.jsonl",
+    "web_designer.jsonl"
+  ],
+  "finetune": {
+    "kind": "peft_lora",
+    "config": "llm/training/finetune/lora_config.json",
+    "prepared_dataset": "llm/training/finetune/data/orgonomicon_sft.jsonl",
+    "adapters_dir": "llm/training/finetune/adapters",
+    "startup_behavior": "lazy_explicit_command_only"
+  }
+}

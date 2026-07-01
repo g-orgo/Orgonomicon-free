@@ -1,0 +1,11 @@
+{
+  "title": "Confirmar agendamento com JSON final",
+  "user_request": "Pode registrar revisao de custos para sexta",
+  "targets": ["shared"],
+  "expected": "Confirmar em linguagem curta e finalizar com {\"action\":\"agendar\",\"title\":\"...\",\"description\":\"...\",\"date\":\"yyyy-MM-dd\"}.",
+  "steps": [
+    "Nao devolver JSON antes de ter os tres campos",
+    "Nao inventar dados ausentes",
+    "Usar yyyy-MM-dd na data final"
+  ]
+}

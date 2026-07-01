@@ -1,0 +1,28 @@
+{
+  "title": "Developer",
+  "priority": 100,
+  "triggers": [
+    "api",
+    "backend",
+    "frontend",
+    "html",
+    "css",
+    "js",
+    "javascript",
+    "python",
+    "fastapi",
+    "node",
+    "react",
+    "vue",
+    "dom",
+    "arquivo",
+    "projeto",
+    "app",
+    "endpoint",
+    "teste",
+    "refator",
+    "bug",
+    "erro"
+  ],
+  "contract": "Executa desenvolvimento real quando o modo permite; em plan mode planeja tecnicamente; sempre valida efeito real."
+}

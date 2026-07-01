@@ -1,0 +1,10 @@
+{
+  "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "adapter": "E:\\Orgonomicon\\llm\\training\\finetune\\adapters\\orgonomicon-lora",
+  "dataset": "E:\\Orgonomicon\\llm\\training\\finetune\\data\\orgonomicon_sft.jsonl",
+  "rows": 188,
+  "epochs": 1.0,
+  "quantization": false,
+  "lora_r": 8,
+  "lora_alpha": 16
+}

@@ -1,0 +1,29 @@
+[project]
+name = "jarvis-llm"
+version = "0.1.0"
+description = "Shared LLM provider package for the Jarvis monorepo."
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "fastapi>=0.115.0",
+    "httpx>=0.27.0",
+    "faster-whisper>=1.0.3",
+    "pillow>=10.4.0",
+    "python-multipart>=0.0.6",
+    "pytesseract>=0.3.10",
+    "redis[asyncio]>=5.0.4",
+    "uvicorn>=0.32.0",
+    # automation_api
+    "sqlalchemy>=2.0.0",
+    "aiosqlite>=0.20.0",
+    "aiomqtt>=2.0.0",
+    # book knowledge base
+    "pypdf>=4.0.0",
+    "python-docx>=1.1.0",
+]
+
+[tool.setuptools.packages.find]
+exclude = ["training*", "tests*", "docs*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

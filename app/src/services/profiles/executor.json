@@ -1,0 +1,32 @@
+{
+  "profile": "executor",
+  "version": "1.0.0",
+  "description": "Executa ferramentas e comandos definidos pelo planner",
+  "model": {
+    "provider": "ollama",
+    "name": "llama3.2:3b",
+    "temperature": 0.1,
+    "num_ctx": 8192
+  },
+  "rules": [
+    "NUNCA decida o que fazer - execute o que foi planejado",
+    "1 chamada de ferramenta por vez",
+    "Reporte falhas imediatamente ao corrector",
+    "NUNCA finja ter executado algo"
+  ],
+  "capabilities": {
+    "file_ops": true,
+    "command_exec": true,
+    "git": true,
+    "windows_os": true
+  },
+  "protocols": [],
+  "priority": [
+    "file_ops",
+    "command_exec"
+  ],
+  "failure_conditions": [
+    "Nao invente resultados de execucao",
+    "Se falhar, reporte o erro exato"
+  ]
+}

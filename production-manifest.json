@@ -1,0 +1,84 @@
+{
+  "mode": "production",
+  "name": "Orgonomicon-free",
+  "protected": true,
+  "app": "E:\\Orgonomicon\\dist\\app",
+  "requirements": [
+    "fastapi",
+    "uvicorn",
+    "requests",
+    "rich",
+    "prompt_toolkit",
+    "pyfiglet",
+    "httpx",
+    "pydantic",
+    "reportlab",
+    "pypdf",
+    "python-docx",
+    "pillow"
+  ],
+  "commands": [
+    "orgonomicon",
+    "/orgonomicon"
+  ],
+  "training_policy": {
+    "user_training_enabled": false,
+    "raw_datasets_included": false,
+    "startup_finetune_enabled": false,
+    "runtime_training_bundle": {
+      "ok": true,
+      "bundle": "llm\\_production_training_bundle.py",
+      "profiles": [],
+      "records": 0
+    },
+    "allowed_user_learning": [
+      "memory",
+      "preferences"
+    ]
+  },
+  "sanitized_training": {
+    "ok": true,
+    "removed": [
+      "llm\\training"
+    ],
+    "adapters": null
+  },
+  "sanitized_docs": {
+    "ok": true,
+    "removed": [
+      "llm\\.claude\\context\\infra\\2026-05-13-compose-dockerfile-case-fix.md",
+      "llm\\.claude\\context\\insights\\2026-05-11-insights-enrich-endpoint.md",
+      "llm\\.claude\\context\\insights\\2026-05-11-insights-financeiro-label-narrativa.md",
+      "llm\\.claude\\context\\media_transcription\\2026-05-09-ocr-bilingue-multipass.md",
+      "llm\\.claude\\context\\media_transcription\\2026-05-12-cors-default-producao-env-debug.md",
+      "llm\\.claude\\context\\media_transcription\\2026-05-12-cors-merge-default-com-env.md",
+      "llm\\.claude\\context\\media_transcription\\2026-05-12-cors-transcricao-producao.md",
+      "llm\\.claude\\context\\media_transcription\\2026-05-12-env-example-cors.md",
+      "llm\\CLAUDE.md",
+      "llm\\README.md",
+      "llm\\docs\\memory-notes\\debugging.md",
+      "llm\\ollama\\README.md",
+      "llm\\src\\modules\\README.md",
+      "llm\\src\\training\\README.md",
+      "llm\\src\\training\\finetune\\README.md",
+      "llm\\src\\training\\finetune\\adapters\\deepseek-coder-v2-lora\\README.md",
+      "llm\\src\\training\\finetune\\adapters\\deepseek-coder-v2-lora\\checkpoint-22\\README.md",
+      "llm\\src\\training\\finetune\\adapters\\deepseek-coder-v2-lora\\checkpoint-8\\README.md",
+      "llm\\src\\training\\finetune\\adapters\\orgonomicon-lora\\README.md",
+      "llm\\src\\training\\finetune\\adapters\\orgonomicon-lora\\checkpoint-2\\README.md",
+      "llm\\src\\training\\shared\\contracts\\runtime_contract.md"
+    ]
+  },
+  "protected_roots": [
+    {
+      "ok": true,
+      "root": "E:\\Orgonomicon\\dist\\app\\src",
+      "removed_sources": 98
+    },
+    {
+      "ok": true,
+      "root": "E:\\Orgonomicon\\dist\\app\\llm",
+      "removed_sources": 73
+    }
+  ]
+}

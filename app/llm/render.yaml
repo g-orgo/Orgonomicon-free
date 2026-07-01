@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: llm-mastermind
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+    preDeployCommand: ""
+    envVars:
+      - key: GORESOLVE_LLM_MODEL_ALIAS
+        value: goresolve
+      - key: GORESOLVE_CORS_ALLOWED_ORIGINS
+        sync: false
