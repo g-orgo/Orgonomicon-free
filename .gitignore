@@ -1,4 +1,5 @@
 .orgonomicon/
+.orgonomicon_data/
 .venv/
 __pycache__/
 *.log
