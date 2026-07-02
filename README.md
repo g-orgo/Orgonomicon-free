@@ -27,7 +27,7 @@ orgonomicon
 - Start with `orgonomicon` and type requests naturally, such as asking it to inspect a project, update a README, or fix a failing command.
 - Use `/zen` to activate the free outsider shortcut for `deepseek-v4-flash-free` without registering a personal API key.
 - Use `/model mode outsider` and `/provider` only when you want BYOK provider configuration.
-- Use `/backend-up` if the CLI reports that the backend is offline.
+- The CLI starts and recovers its local backend automatically during normal use.
 - Use the CLI diagnostic log command after a failed interaction to save a recovery bundle.
 
 ## Runtime Data
@@ -45,7 +45,7 @@ Runtime settings, logs, sessions, local memories, provider configuration, and ge
 ## Troubleshooting
 
 - If `orgonomicon` is not recognized, run `.\install.ps1` again and open a new terminal.
-- If the backend is offline, run `/backend-up` from inside the CLI or verify `http://127.0.0.1:9000/health`.
+- If the backend stays offline, restart `orgonomicon`; the CLI will attempt recovery automatically.
 - If a provider fails, try `/zen` for the free outsider shortcut or inspect `/provider status` in outsider mode.
 - If a command fails, keep the generated debug log; it contains the backend events needed for recovery.
 
