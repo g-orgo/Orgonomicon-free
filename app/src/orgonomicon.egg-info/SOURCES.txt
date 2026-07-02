@@ -1,5 +1,12 @@
 README.md
 pyproject.toml
+commonsense/__init__.py
+commonsense/blueprint_enricher.py
+commonsense/complexity_classifier.py
+commonsense/context_gatherer.py
+commonsense/orchestrator.py
+commonsense/project_lore.py
+commonsense/quality_gate.py
 config/runtime_defaults.py
 orgonomicon.egg-info/PKG-INFO
 orgonomicon.egg-info/SOURCES.txt
@@ -19,6 +26,7 @@ services/book_encoder_runtime.py
 services/change_manifest.py
 services/code_tree.py
 services/commands.py
+services/context_extractor.py
 services/context_manager.py
 services/context_tracker.py
 services/error_recovery_runtime.py

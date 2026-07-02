@@ -15,7 +15,8 @@
     "reportlab",
     "pypdf",
     "python-docx",
-    "pillow"
+    "pillow",
+    "pytesseract"
   ],
   "commands": [
     "orgonomicon",
@@ -78,7 +79,7 @@
     {
       "ok": true,
       "root": "E:\\Orgonomicon\\dist\\app\\llm",
-      "removed_sources": 76
+      "removed_sources": 78
     }
   ]
 }
