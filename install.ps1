@@ -8,6 +8,16 @@ $InstallRoot = [IO.Path]::GetFullPath($InstallRoot)
 $StagingRoot = "$InstallRoot.new"
 $PreviousRoot = "$InstallRoot.previous"
 
+$InstallRootKey = $InstallRoot.ToLowerInvariant()
+Get-CimInstance Win32_Process | Where-Object {
+    $_.CommandLine -and
+    $_.CommandLine.ToLowerInvariant().Contains($InstallRootKey) -and
+    ($_.CommandLine.ToLowerInvariant().Contains('terminal_cli.pyc') -or $_.CommandLine.ToLowerInvariant().Contains('backend_app:app'))
+} | ForEach-Object {
+    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+}
+Start-Sleep -Milliseconds 300
+
 function Normalize-PathEntry([string]$PathEntry) {
     return $PathEntry.Trim().TrimEnd('\\').ToLowerInvariant()
 }
