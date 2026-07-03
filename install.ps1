@@ -62,6 +62,29 @@ $SessionEntries = @($env:Path -split ';' | Where-Object {
 })
 $env:Path = ($SessionEntries + $Bin) -join ';'
 
+$ProfilePath = $PROFILE.CurrentUserCurrentHost
+$ProfileDir = Split-Path -Parent $ProfilePath
+if (!(Test-Path $ProfileDir)) { New-Item -ItemType Directory -Path $ProfileDir -Force | Out-Null }
+$ProfileText = if (Test-Path $ProfilePath) { Get-Content -LiteralPath $ProfilePath -Raw } else { '' }
+$StartMarker = '# >>> Orgonomicon production launcher >>>'
+$EndMarker = '# <<< Orgonomicon production launcher <<<'
+$LegacyPattern = '(?ms)^# Orgonomicon-free\s*?\r?\nfunction global:orgonomicon \{.*?Set-Alias -Name ''/orgonomicon'' -Value orgonomicon -Scope Global\r?\n?'
+$ProfileText = [regex]::Replace($ProfileText, $LegacyPattern, '')
+$ManagedPattern = "(?ms)$([regex]::Escape($StartMarker)).*?$([regex]::Escape($EndMarker))\r?\n?"
+$ProfileText = [regex]::Replace($ProfileText, $ManagedPattern, '')
+$LauncherPs1 = Join-Path $Bin 'orgonomicon.ps1'
+$ManagedBlock = @"
+$StartMarker
+function global:orgonomicon {
+    & '$LauncherPs1' @args
+}
+Set-Alias -Name '/orgonomicon' -Value orgonomicon -Scope Global
+$EndMarker
+"@
+Set-Content -LiteralPath $ProfilePath -Value (($ProfileText.TrimEnd() + "`r`n`r`n" + $ManagedBlock).TrimStart()) -Encoding UTF8
+Set-Item -Path Function:\global:orgonomicon -Value { & "$env:LOCALAPPDATA\Orgonomicon\bin\orgonomicon.ps1" @args }
+Set-Alias -Name '/orgonomicon' -Value orgonomicon -Scope Global
+
 New-Item -Path $RegistryPath -Force | Out-Null
 New-ItemProperty -Path $RegistryPath -Name InstallRoot -Value $InstallRoot -PropertyType String -Force | Out-Null
 Write-Host "Orgonomicon instalado em $InstallRoot. Use 'orgonomicon' neste terminal ou em um novo terminal."
