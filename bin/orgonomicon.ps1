@@ -5,6 +5,7 @@ if (!(Test-Path $Python)) { $Python = 'python' }
 $env:ORGONOMICON_DIST = $Dist
 $env:ORGONOMICON_ROOT = $App
 $env:ORGONOMICON_PRODUCTION = '1'
+$env:ORGONOMICON_BACKEND_DETACHED = '1'
 $env:ORGONOMICON_DISABLE_STARTUP_FINETUNE = '1'
 $env:ORGONOMICON_DATA_DIR = Join-Path $env:USERPROFILE '.orgonomicon_data'
 $env:PYTHONPATH = "$App\src;$App;$App\llm"

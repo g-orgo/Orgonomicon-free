@@ -16,7 +16,8 @@
     "pypdf",
     "python-docx",
     "pillow",
-    "pytesseract"
+    "pytesseract",
+    "duckduckgo-search>=7.0"
   ],
   "commands": [
     "orgonomicon",
@@ -74,7 +75,7 @@
     {
       "ok": true,
       "root": "E:\\Orgonomicon\\dist\\app\\src",
-      "removed_sources": 100
+      "removed_sources": 101
     },
     {
       "ok": true,

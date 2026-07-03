@@ -11,3 +11,4 @@ pypdf
 python-docx
 pillow
 pytesseract
+duckduckgo-search>=7.0
