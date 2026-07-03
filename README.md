@@ -25,8 +25,9 @@ orgonomicon
 ## Using The Agent
 
 - Start with `orgonomicon` and type requests naturally, such as asking it to inspect a project, update a README, or fix a failing command.
-- Use `/zen` to activate the free outsider shortcut for `deepseek-v4-flash-free` without registering a personal API key.
-- Use `/model mode outsider` and `/provider` only when you want BYOK provider configuration.
+- Use `/mode local-running` for the default local runtime.
+- Use `/zen` or `/mode zen` to activate the free outsider shortcut for `deepseek-v4-flash-free` without registering a personal API key.
+- Use `/mode outsider` and `/provider` only when you want BYOK provider configuration.
 - The CLI starts and recovers its local backend automatically during normal use.
 - Use the CLI diagnostic log command after a failed interaction to save a recovery bundle.
 
