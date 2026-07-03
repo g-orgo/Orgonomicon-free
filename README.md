@@ -33,7 +33,7 @@ orgonomicon
 
 ## Runtime Data
 
-Runtime settings, logs, sessions, local memories, provider configuration, and generated diagnostics are stored in `.orgonomicon_data/`. Keep that folder out of Git and do not share it when it may contain local paths, API keys, or private project context.
+Runtime settings, logs, sessions, local memories, provider configuration, and generated diagnostics are stored in `~/.orgonomicon/`. Keep that folder out of Git and do not share it when it may contain local paths, API keys, or private project context.
 
 ## What Is Included
 

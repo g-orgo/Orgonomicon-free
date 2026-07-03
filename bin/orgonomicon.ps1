@@ -7,6 +7,6 @@ $env:ORGONOMICON_ROOT = $App
 $env:ORGONOMICON_PRODUCTION = '1'
 $env:ORGONOMICON_BACKEND_DETACHED = '1'
 $env:ORGONOMICON_DISABLE_STARTUP_FINETUNE = '1'
-$env:ORGONOMICON_DATA_DIR = Join-Path $env:USERPROFILE '.orgonomicon_data'
+$env:ORGONOMICON_DATA_DIR = Join-Path $env:USERPROFILE '.orgonomicon'
 $env:PYTHONPATH = "$App\src;$App;$App\llm"
 & $Python (Join-Path $App 'src\cli\terminal_cli.pyc') @args
