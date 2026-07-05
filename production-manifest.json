@@ -30,8 +30,11 @@
     "runtime_training_bundle": {
       "ok": true,
       "bundle": "llm\\_production_training_bundle.py",
-      "profiles": [],
-      "records": 0
+      "profiles": [
+        "assistant",
+        "goresolve"
+      ],
+      "records": 4
     },
     "allowed_user_learning": [
       "memory",
@@ -41,9 +44,10 @@
   "sanitized_training": {
     "ok": true,
     "removed": [
+      "llm\\src\\training",
       "llm\\training"
     ],
-    "adapters": null
+    "adapters": "llm\\production_adapters"
   },
   "sanitized_docs": {
     "ok": true,
@@ -60,15 +64,9 @@
       "llm\\README.md",
       "llm\\docs\\memory-notes\\debugging.md",
       "llm\\ollama\\README.md",
-      "llm\\src\\modules\\README.md",
-      "llm\\src\\training\\README.md",
-      "llm\\src\\training\\finetune\\README.md",
-      "llm\\src\\training\\finetune\\adapters\\deepseek-coder-v2-lora\\README.md",
-      "llm\\src\\training\\finetune\\adapters\\deepseek-coder-v2-lora\\checkpoint-22\\README.md",
-      "llm\\src\\training\\finetune\\adapters\\deepseek-coder-v2-lora\\checkpoint-8\\README.md",
-      "llm\\src\\training\\finetune\\adapters\\orgonomicon-lora\\README.md",
-      "llm\\src\\training\\finetune\\adapters\\orgonomicon-lora\\checkpoint-2\\README.md",
-      "llm\\src\\training\\shared\\contracts\\runtime_contract.md"
+      "llm\\production_adapters\\deepseek-coder-v2-lora\\README.md",
+      "llm\\production_adapters\\orgonomicon-lora\\README.md",
+      "llm\\src\\modules\\README.md"
     ]
   },
   "protected_roots": [
@@ -80,7 +78,7 @@
     {
       "ok": true,
       "root": "E:\\Orgonomicon\\dist\\app\\llm",
-      "removed_sources": 78
+      "removed_sources": 60
     }
   ]
 }

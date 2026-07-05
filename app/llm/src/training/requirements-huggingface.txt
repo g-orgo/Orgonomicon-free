@@ -1,5 +1,0 @@
-datasets
-transformers
-peft
-accelerate
-torch
